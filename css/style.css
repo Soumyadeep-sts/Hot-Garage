@@ -1,0 +1,246 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hot-wheels-blue: #0047AB;
+    --flame-orange: #FF8C00;
+    --dark-bg: #1a1a1a;
+    --darker-bg: #0f0f0f;
+    --text-light: #e0e0e0;
+    --text-white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--hot-wheels-blue) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero .tagline {
+    font-size: 1.5rem;
+    color: var(--flame-orange);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.hero .intro {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Brand Grid Section */
+.brands {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brands h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Brand Buttons */
+.brand-button {
+    display: block;
+    padding: 2rem 1rem;
+    background-color: var(--darker-bg);
+    border: 2px solid var(--hot-wheels-blue);
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-button span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-white);
+    position: relative;
+    z-index: 2;
+}
+
+.brand-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--hot-wheels-blue), var(--flame-orange));
+    transition: left 0.4s ease;
+    z-index: 1;
+}
+
+.brand-button:hover {
+    border-color: var(--flame-orange);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 140, 0, 0.3);
+}
+
+.brand-button:hover::before {
+    left: 0;
+}
+
+.brand-button:active {
+    transform: translateY(-2px);
+}
+
+/* Brand Page Styles */
+.breadcrumb {
+    padding: 1rem 2rem;
+    background-color: var(--darker-bg);
+}
+
+.breadcrumb a {
+    color: var(--flame-orange);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--hot-wheels-blue);
+}
+
+.brand-header {
+    background: linear-gradient(135deg, var(--hot-wheels-blue) 0%, var(--flame-orange) 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.brand-header h1 {
+    font-size: 3rem;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.brand-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Car Showcase */
+.car-showcase {
+    margin-bottom: 3rem;
+}
+
+.car-photo {
+    text-align: center;
+    background-color: var(--darker-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--hot-wheels-blue);
+}
+
+.car-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Car Table */
+.car-list h2 {
+    font-size: 2rem;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+}
+
+.car-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--darker-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.car-table thead {
+    background-color: var(--hot-wheels-blue);
+}
+
+.car-table th {
+    padding: 1rem;
+    text-align: left;
+    color: var(--text-white);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.car-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #2a2a2a;
+    color: var(--text-light);
+}
+
+.car-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.car-table tbody tr:hover {
+    background-color: rgba(0, 71, 171, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--darker-bg);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 2px solid var(--hot-wheels-blue);
+}
+
+footer p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .brand-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .brand-header h1 {
+        font-size: 2rem;
+    }
+}
